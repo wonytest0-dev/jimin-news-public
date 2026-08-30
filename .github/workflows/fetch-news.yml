@@ -15,11 +15,11 @@ jobs:
         with:
           path: public-repo
 
-      - name: Checkout private repo (via deploy key)
+      - name: Checkout private repo
         uses: actions/checkout@v4
         with:
           repository: wonytest0-dev/jimin-news-private
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: private-repo
 
       - name: Setup Node
